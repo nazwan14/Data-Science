@@ -604,7 +604,7 @@ y_pred_xgb = xgb_model.predict(X_test_normal)
 accuracy = accuracy_xgb_smote_normal_Tun = round(accuracy_score(y_test_normal, y_pred_xgb),3)
 
 df_final = X_test_normal
-df_final['target'] = y_pred_xgb
+df_final["target"] = y_pred_xgb
 
 # STREAMLIT
 st.set_page_config(
