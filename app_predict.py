@@ -599,12 +599,12 @@ dan parameter optimal dapat meningkatkan akurasi dan kinerja model secara keselu
 """
 model = pickle.load(open("model/xgb_model.pkl", 'rb'))
 
-y_pred = model.predict(X)
-accuracy = accuracy_score(y, y_pred)
-accuracy = round((accuracy * 100), 2)
 
-df_final = pd.DataFrame(X)
-df_final['target'] = y
+y_pred_xgb = xgb_model.predict(X_test_normal)
+accuracy = accuracy_xgb_smote_normal_Tun = round(accuracy_score(y_test_normal, y_pred_xgb),3)
+
+df_final = X_test_normal
+df_final['target'] = y_pred_xgb
 
 # STREAMLIT
 st.set_page_config(
