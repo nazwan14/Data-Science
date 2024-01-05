@@ -603,7 +603,7 @@ y_pred = model.predict(X)
 accuracy = accuracy_score(y, y_pred)
 accuracy = round((accuracy * 100), 2)
 
-df_final = X
+df_final = pd.DataFrame(X)
 df_final['target'] = y
 
 # STREAMLIT
